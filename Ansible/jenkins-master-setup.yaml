@@ -1,7 +1,7 @@
 ---
 - hosts: Jenkins-master
   become: true
-  task:
+  tasks:
   - name: add jenkins key
     apt_key: 
      url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
@@ -15,7 +15,7 @@
   
   - name: install java
     apt:
-     name: openjdk-11-jre
+     name: openjdk-21-jre
      state: present
 
   - name: install jenkins
